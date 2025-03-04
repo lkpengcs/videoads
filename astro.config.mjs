@@ -7,7 +7,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://videoads.netlify.app/', 
+  site: 'https://videoadsbenchmark.netlify.app/', 
   base: '/', 
   output: 'static', //
   integrations: [tailwind(), icon(), mdx(), react()],
