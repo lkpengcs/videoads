@@ -19,20 +19,41 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
 import LaTeX from "../components/LaTeX.astro";
 
 import Splat from "../components/Splat.tsx"
-
+import visual_dataset from "../assets/visual_dataset.png";
 import CodeBlock from "../components/CodeBlock.astro";
 import Table from "../components/Table.astro";
+
 export const components = {pre: CodeBlock, table: Table}
 
 <Header
   title={frontmatter.title}
   authors={[
     {
-      name: "Anonymous Author",
-      institution: "Anonymous Institution",
+      name: "Zheyuan Zhang",
+      institution: "Northwestern University",
+    },
+    {
+      name: "Monica Dou",
+      institution: "Northwestern University",
+    },
+    {
+      name: "Linkai Peng",
+      institution: "Northwestern University",
+    },
+    {
+      name: "Hongyi Pan",
+      institution: "Northwestern University",
+    },
+    {
+      name: "Ulas Bagci",
+      institution: "Northwestern University",
+    },
+    {
+      name: "Boqing Gong",
+      institution: "Boston University",
     },
   ]}
-  conference=""
+  conference="ICCV 2025"
   notes={[
   ]}
   links={[
@@ -63,6 +84,27 @@ export const components = {pre: CodeBlock, table: Table}
 
 ## Abstract
 
-Advertisement videos serve as a rich and valuable source of purpose-driven information, encompassing high-quality visual, textual, and contextual cues designed to engage viewers. Unlike conventional short-form videos, advertisement videos inherently demand complex temporal understanding, often causing state-of-the-art multi-modal language models (MLLMs) to fail in reasoning over complex multi-modal sequential events. In this work, we introduce VideoAds, the first-ever dataset tailored for benchmarking the performance of MLLMs on advertisement videos. VideoAds comprises well-curated advertisement videos with complex temporal structures, accompanied by manually annotated valuable questions across three core tasks: visual finding, video summarization, and visual reasoning. Furthermore, we propose a quantitative metric for video complexity, enabling a more structured evaluation of video-based temporal reasoning. Extensive benchmarking of state-of-the-art VLMs reveals significant limitations in processing the intricate temporal structures present in advertisement videos. Particularly, GPT-4o only achieved a maximum accuracy of 66.82% on this short video four-option multiple-choice dataset while humans can achieve one accuracy of 94.27%. Notably, models exhibit higher accuracy in visual finding tasks than video summarization and complex reasoning, suggesting that current VLMs prioritize static frame-based features over holistic temporal comprehension, even within relatively short videos. Further analysis of the Chain of Thought (CoT) reveals the limitation of some MLLMs in dealing with complex contexts in challenging video reasoning. Our findings underscore the necessity of advancing temporal modeling techniques in multi-modal learning and highlight VideoAds as a crucial benchmark for future research in video-based language understanding. The dataset and evaluation code are publicly available at XXX.
+Advertisement videos serve as a rich and valuable source of purpose-driven information, encompassing high-quality visual, textual, and contextual cues designed to engage viewers. They are often more complex than general videos of similar duration due to their structured narratives and rapid scene transitions, posing significant challenges to multimodal large language models (MLLMs). In this work, we introduce VideoAds, the first dataset tailored for benchmarking the performance of MLLMs on advertisement videos. VideoAds comprises well-curated advertisement videos with complex temporal structures, accompanied by manually annotated diverse questions across three core tasks: visual finding, video summary, and visual reasoning. We propose a quantitative measure to compare VideoAds against existing benchmarks in terms of video complexity. Through extensive experiments, we find that Qwen2.5-VL-72B, an opensource MLLM, achieves 73.35% accuracy on VideoAds, outperforming GPT-4o (66.82%) and Gemini-1.5 Pro (69.66%); the two proprietary models especially fall behind the opensource model in video summarization and reasoning, but perform the best in visual finding. Notably, human experts easily achieve a remarkable accuracy of 94.27%. These results underscore the necessity of advancing MLLMs’ temporal modeling capabilities and highlight VideoAds as a potentially pivotal benchmark for future research in understanding video that requires high FPS sampling. 
 
 </HighlightedSection>
+
+## Figures
+
+VideoAds comprises three challenging tasks: Visual Finding, Visual Summary, and Visual Reasoning, specifically designed to evaluate MLLMs’ temporal reasoning capabilities on videos with complex temporal structures that have never been investigated before. Unlike many previous datasets that focus on recognizing isolated actions or events, VideoAds demands that models derive the correct answers only through multistep reasoning over multi-modal visual clues.
+
+<Figure>
+  <Image slot="figure" source={visual_dataset} altText="An example from our curated video question answering dataset." />
+  <span slot="caption">An example from our curated video question answering dataset.</span>
+</Figure>
+
+
+## BibTeX citation
+
+```bibtex
+@article{zhang2025videoads,
+  title={VideoAds for Fast-Paced Video Understanding: Where Opensource Foundation Models Beat GPT-4o \& Gemini-1.5 Pro},
+  author={Zhang, Zheyuan and Dou, Monica and Peng, Linkai and Pan, Hongyi and Bagci, Ulas and Gong, Boqing},
+  journal={arXiv preprint arXiv:2504.09282},
+  year={2025}
+}
+```
