@@ -88,7 +88,7 @@ Advertisement videos serve as a rich and valuable source of purpose-driven infor
 
 </HighlightedSection>
 
-## Figures
+## Figure
 
 VideoAds comprises three challenging tasks: Visual Finding, Visual Summary, and Visual Reasoning, specifically designed to evaluate MLLMs’ temporal reasoning capabilities on videos with complex temporal structures that have never been investigated before. Unlike many previous datasets that focus on recognizing isolated actions or events, VideoAds demands that models derive the correct answers only through multistep reasoning over multi-modal visual clues.
 
@@ -98,6 +98,37 @@ VideoAds comprises three challenging tasks: Visual Finding, Visual Summary, and 
   >
     <Image source={visual_dataset} altText="An example from our curated video question answering dataset." />
 </Figure>
+
+## Table
+
+The comparison of various minutes-long video benchmarks: total number of videos (**\#Videos**), number of clips (**\#Clips**), average duration of the videos (**Len.**), number of QA pairs (**\#QA Pairs**), method of annotation (**Anno.**, M/A means the manually/automatic manner), average number of QA-pair tokens (**QA Tokens**), complexity duration (**Complexity Duration**), and video complexity (**Video Complexity**).
+
+$$
+\small
+\begin{array}{lrrrrc|cc}
+\hline
+\textbf{Benchmarks} & \textbf{\#Videos} & \textbf{\#Clips} & \textbf{Len.(s)} & \textbf{\#QA Pairs} & \textbf{Anno.} & \textbf{Complexity Duration} \uparrow & \textbf{Video Complexity} \uparrow \\
+\hline
+\text{TGIF-QA}        & 9575 & 9575 & 3.0   & 8506  & \text{A\&M} & 0.67   & 21.10 \\
+\text{STAR}           &  914 & 7098 & 11.9  & 7098  & \text{A}    & 6.25   & 22.90 \\
+\text{NExT-QA}        & 1000 & 1000 & 39.5  & 8564  & \text{A}    & 9.23   & 24.01 \\
+\text{MSVD-QA}        &  504 &  504 & 9.8   & 13157 & \text{A}    & 1.75   & 26.55 \\
+\text{MSRVTT-QA}      & 2990 & 2990 & 15.2  & 72821 & \text{A}    & 3.68   & 35.62 \\
+\text{ActivityNet-QA} &  800 &  800 & 111.4 & 8000  & \text{M}    & 47.59  & 40.82 \\
+\hline
+\text{TempCompass}    &  410 &  500 & 11.4  & 7540  & \text{A\&M} & 1.62   & 20.21 \\
+\text{MVBench}        & 3641 & 3641 & 16.0  & 4000  & \text{A} & 3.34   & 20.43 \\
+\text{Video-Bench}    & 5917 & 5917 & 56.0  & 17036 & \text{A\&M} & 16.58  & 26.88 \\
+\text{EgoSchema}      & 5063 & 5063 & 180.0 & 5063  & \text{A\&M} & 54.30  & 31.04 \\
+\text{AutoEval-Video} &  327 &  327 & 14.6  & 327   & \text{M}    & 3.46   & 30.46 \\
+\text{Video-MME-S}    &  300 &  300 & 80.7  & 900   & \text{M}    & 44.81  & 56.10 \\
+\text{Video-MME-M}    &  300 &  300 & 515.9 & 900   & \text{M}    & 220.88 & 42.38 \\
+\hline
+\textbf{VideoAds}     & 200 & 200 & 79.6 & 1100 & M & 60.32 & 67.40 \\
+\hline
+\end{array}
+$$
+
 
 ## BibTeX citation
 
