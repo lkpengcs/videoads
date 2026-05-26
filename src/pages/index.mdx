@@ -99,7 +99,7 @@ VideoAds comprises three challenging tasks: Visual Finding, Visual Summary, and 
     <Image source={visual_dataset} altText="An example from our curated video question answering dataset." />
 </Figure>
 
-## Table
+## Benchmark Comparison
 
 The comparison of various minutes-long video benchmarks: total number of videos (**\#Videos**), number of clips (**\#Clips**), average duration of the videos (**Len.**), number of QA pairs (**\#QA Pairs**), method of annotation (**Anno.**, M/A means the manually/automatic manner), average number of QA-pair tokens (**QA Tokens**), complexity duration (**Complexity Duration**), and video complexity (**Video Complexity**).
 
@@ -129,6 +129,16 @@ $$
 \end{array}
 $$
 
+## Model Comparison
+
+Performance comparison of Gemini models across finding, summary, and reasoning dimensions on the VideoAds benchmark. Bold values indicate the best score per column. Gemini-3.1-pro-preview at 1 fps achieves the highest overall score (85.7), outperforming higher frame rates, suggesting diminishing returns from denser temporal sampling.
+
+| Model | Frames | Finding | Summary | Reasoning | Overall |
+|---|---|---|---|---|---|
+| Gemini-3-flash-preview | 1 fps | 81.9 | 81.4 | 77.4 | 80.2 |
+| Gemini-3.1-pro-preview | 1 fps | **86.1** | **87.8** | 83.2 | **85.7** |
+| Gemini-3.1-pro-preview | 5 fps | **86.1** | 83.3 | **84.0** | 84.5 |
+| Gemini-3.1-pro-preview | 10 fps | 85.4 | 83.0 | 82.1 | 83.5 |
 
 ## BibTeX citation
 
